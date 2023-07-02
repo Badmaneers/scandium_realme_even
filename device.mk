@@ -28,8 +28,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # IMS
 $(call inherit-product, vendor/realme/even-ims/even-ims.mk)
 
+# RealmeDirac
+$(call inherit-product, $(DEVICE_PATH)/app/RealmeDirac/dirac.mk)
+
 # RealmeParts
-$(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
+$(call inherit-product, $(DEVICE_PATH)/app/RealmeParts/parts.mk)
 
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
@@ -57,6 +60,10 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
     $(DEVICE_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PLATFORM_VNDK_VERSION)/etc/audio_policy_configuration.xml \
     $(DEVICE_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_ODM)/etc/audio_policy_configuration.xml
+
+PRODUCT_PACKAGES += \
+    BesLoudness \
+    MtkInCallService
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -185,18 +192,13 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/power/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml
 
 # Properties
--include $(DEVICE_PATH)/configs/props/system.prop
--include $(DEVICE_PATH)/configs/props/product.prop
+-include $(DEVICE_PATH)/configs/props/vendor.prop
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 # Recovery
 PRODUCT_PACKAGES += \
     init.recovery.mt6768.rc
 	
-# RemovePackages
-PRODUCT_PACKAGES += \
-    RemovePackages
-
 # Screen density
 PRODUCT_AAPT_CONFIG := xxxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
