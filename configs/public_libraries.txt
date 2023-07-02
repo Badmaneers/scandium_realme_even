@@ -1,0 +1,6 @@
+libOpenCL.so
+libAlgoProcess.so
+libAncHumBokeh.so
+libstblur_api.so
+libAncHumVideoBase.so
+libvpu.so
