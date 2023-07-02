@@ -16,6 +16,7 @@ lib64/libem_support_jni.so
 bin/kpoc_charger
 etc/init/kpoc_charger.rc
 lib/libshowlogo.so
+lib/libsysenv_system.so
 
 # Kernel-Modules
 vendor/lib/modules/bt_drv.ko:product/vendor_overlay/30/lib/modules/bt_drv.ko
