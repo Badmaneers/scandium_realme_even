@@ -80,7 +80,11 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Camera
+    Camera \
+    Aperture 
+
+PRODUCT_PACKAGES += \
+    RemoveCameraPackages
 
 # Configstore
 PRODUCT_PACKAGES += \
