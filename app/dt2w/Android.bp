@@ -16,7 +16,7 @@
  */
 
 android_app {
-    name: "DT2W-Service-RMX2020",
+    name: "DT2W-Service-even",
 
     srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
@@ -30,13 +30,13 @@ android_app {
     },
 
     required: [
-        "privapp-permissions_org.lineageos.dt2w.RMX2020",
+        "privapp-permissions_org.lineageos.dt2w.even",
     ],
 }
 
 prebuilt_etc {
-    name: "privapp-permissions_org.lineageos.dt2w.RMX2020",
+    name: "privapp-permissions_org.lineageos.dt2w.even",
     sub_dir: "permissions",
-    src: "privapp-permissions_org.lineageos.dt2w.RMX2020.xml",
+    src: "privapp-permissions_org.lineageos.dt2w.even.xml",
     filename_from_src: true,
 }
