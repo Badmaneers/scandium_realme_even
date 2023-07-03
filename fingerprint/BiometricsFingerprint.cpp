@@ -1,4 +1,4 @@
-/*
+y/*
  * Copyright (C) 2017 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.even"
-#define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.1-service.even"
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.lily"
+#define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.1-service.lily"
 
 #include <hardware/hardware.h>
 #include <hardware/fingerprint.h>
@@ -116,7 +116,7 @@ public:
     }
     Return<void> onFingerprintCmd(int32_t deviceId, const hidl_vec<uint32_t>& groupId, uint32_t remaining) { return Void(); }
     Return<void> onImageInfoAcquired(uint32_t type, uint32_t quality, uint32_t match_score) { return Void(); }
-    Return<void> onMonitorEventTriggered(uint32_t type, const hidl_string& data) { return Void(); }
+    Return<void> onMonitorlilytTriggered(uint32_t type, const hidl_string& data) { return Void(); }
     Return<void> onEngineeringInfoUpdated(uint32_t length, const hidl_vec<uint32_t>& keys, const hidl_vec<hidl_string>& values) { return Void(); }
     Return<void> onUIReady(int64_t deviceId) { return Void(); }
 
@@ -247,7 +247,7 @@ Return<RequestStatus> BiometricsFingerprint::remove(uint32_t gid, uint32_t fid) 
     ALOGE("remove");
     return OplusToAOSPRequestStatus(mOplusBiometricsFingerprint->remove(gid, fid));
 }
-
+y
 Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
     const hidl_string& storePath)  {
     ALOGE("setActiveGroup");

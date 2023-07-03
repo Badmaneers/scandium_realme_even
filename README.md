@@ -1,6 +1,6 @@
-# Device Tree for Realme C25 and Realme C25s 
+# Device Tree for Realme Lily 
 
-The Realme C25 and Realme C25s are budget smartphones from Realme. These are announced and released in March 2021 and June 2021.
+ These are announced and released in March 2021 and June 2021.
 
 ## Device Specifications
 Basic   | Spec Sheet

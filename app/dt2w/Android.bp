@@ -16,7 +16,7 @@
  */
 
 android_app {
-    name: "DT2W-Service-even",
+    name: "DT2W-Service-lily",
 
     srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
@@ -30,13 +30,13 @@ android_app {
     },
 
     required: [
-        "privapp-permissions_org.lineageos.dt2w.even",
+        "privapp-permissions_org.lineageos.dt2w.lily",
     ],
 }
 
 prebuilt_etc {
-    name: "privapp-permissions_org.lineageos.dt2w.even",
+    name: "privapp-permissions_org.lineageos.dt2w.lily",
     sub_dir: "permissions",
-    src: "privapp-permissions_org.lineageos.dt2w.even.xml",
+    src: "privapp-permissions_org.lineageos.dt2w.lily.xml",
     filename_from_src: true,
 }

@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/dot_even.mk
+    $(LOCAL_DIR)/dot_lily.mk
 
 COMMON_LUNCH_CHOICES := \
-        dot_even-eng \
-        dot_even-user \
-        dot_even-userdebug
+        dot_lily-eng \
+        dot_lily-user \
+        dot_lily-userdebug

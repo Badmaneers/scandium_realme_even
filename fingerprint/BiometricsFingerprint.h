@@ -16,6 +16,10 @@
 
 #pragma once
 
+#ifndef ANDROID_HARDWARE_BIOMETRICS_FINGERPRINT_V2_1_BIOMETRICSFINGERPRINT_H
+#define ANDROID_HARDWARE_BIOMETRICS_FINGERPRINT_V2_1_BIOMETRICSFINGERPRINT_H
+
+
 #include <log/log.h>
 #include <android/log.h>
 #include <hardware/hardware.h>
@@ -63,7 +67,7 @@ public:
     Return<RequestStatus> cleanUp();
     Return<RequestStatus> pauseEnroll();
     Return<RequestStatus> continueEnroll();
-    Return<RequestStatus> setTouchEventListener();
+    Return<RequestStatus> setTouchlilytListener();
     Return<RequestStatus> dynamicallyConfigLog(uint32_t on);
     Return<RequestStatus> pauseIdentify();
     Return<RequestStatus> continueIdentify();
