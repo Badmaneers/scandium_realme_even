@@ -1,4 +1,4 @@
-DEVICE_PATH := device/realme/even
+DEVICE_PATH := device/realme/lily
 
 # Init scripts
 PRODUCT_PACKAGES += \

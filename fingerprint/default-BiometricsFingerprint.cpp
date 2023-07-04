@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.lily"
-#define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.1-service.lily"
 
 #include <hardware/hardware.h>
 #include <hardware/fingerprint.h>
@@ -116,7 +115,7 @@ public:
     }
     Return<void> onFingerprintCmd(int32_t deviceId, const hidl_vec<uint32_t>& groupId, uint32_t remaining) { return Void(); }
     Return<void> onImageInfoAcquired(uint32_t type, uint32_t quality, uint32_t match_score) { return Void(); }
-    Return<void> onMonitorEventTriggered(uint32_t type, const hidl_string& data) { return Void(); }
+    Return<void> onMonitorlilytTriggered(uint32_t type, const hidl_string& data) { return Void(); }
     Return<void> onEngineeringInfoUpdated(uint32_t length, const hidl_vec<uint32_t>& keys, const hidl_vec<hidl_string>& values) { return Void(); }
     Return<void> onUIReady(int64_t deviceId) { return Void(); }
 
