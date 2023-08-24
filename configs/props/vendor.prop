@@ -1,5 +1,40 @@
+# AAL
+ro.vendor.pq.mtk_aal_support=1
+
+# ADB
+persist.adb.nonblocking_ffs=0
+
+# AEE
+ro.vendor.have_aeev_feature=1
+ro.vendor.aee.convert64=0
+
+# Audio
+aaudio.mmap_policy=2
+aaudio.mmap_exclusive_policy=2
+ro.vendor.mtk_audio_alac_support=1
+ro.vendor.mtk_hifiaudio_support=1
+ro.vendor.mtk_audio_tuning_tool_ver=V2.2
+ro.vendor.mtk_audio_ape_support=1
+ro.config.vc_call_vol_steps=7
+
 # Bluetooth
 persist.bluetooth.bluetooth_audio_hal.disabled=true
+ro.vendor.bluetooth.a2dp_aac_vbr.is_disabled=true
+bluetooth.profile.sap.server.enabled=false
+bluetooth.profile.bas.client.enabled=true
+bluetooth.profile.asha.central.enabled=true
+bluetooth.profile.a2dp.source.enabled=true
+bluetooth.profile.avrcp.target.enabled=true
+bluetooth.profile.gatt.enabled=true
+bluetooth.profile.hfp.ag.enabled=true
+bluetooth.profile.hid.device.enabled=true
+bluetooth.profile.hid.host.enabled=true
+bluetooth.profile.map.server.enabled=true
+bluetooth.profile.opp.enabled=true
+bluetooth.profile.pan.nap.enabled=true
+bluetooth.profile.pan.panu.enabled=true
+bluetooth.profile.pbap.server.enabled=true
+vendor.bluetooth.ldac.abr=true
 
 # Dex
 persist.bg.dexopt.enable=true
@@ -15,7 +50,11 @@ dalvik.vm.dex2oat-threads=6
 persist.device_config.runtime_native_boot.iorap_readahead_enable=true
 iorapd.readahead.enable=true
 
-# Display
+# Display - Dynamic Frame Rate
+ro.surface_flinger.set_touch_timer_ms=3000
+ro.surface_flinger.set_idle_timer_ms=3000
+ro.surface_flinger.set_display_power_timer_ms=1200
+ro.surface_flinger.use_content_detection_for_refresh_rate=true
 ro.sf.lcd_density=320
 
 # LMKD
@@ -51,3 +90,57 @@ ro.vendor.mtk_nn_quant_preferred=1
 
 # default refresh rate threshold
 debug.sf.frame_rate_multiple_threshold=0
+
+# FRP
+ro.frp.pst=/dev/block/by-name/frp
+
+# GPS 
+ro.vendor.mtk_agps_app=1
+ro.vendor.mtk_gps_support=1
+ro.vendor.gps.chrdev=gps_drv
+ro.vendor.mtk_log_hide_gps=0
+
+# Misc
+ro.oem_unlock_supported=1
+ro.vendor.mtk_aod_support=0
+ro.vendor.mtk_ovl_bringup=0
+dalvik.vm.mtk-stack-trace-file=/data/anr/mtk_traces.txt
+dalvik.vm.heapsize=512m
+persist.vendor.factory.GB2312=yes
+
+# Priv-app Permissions
+ro.control_privapp_permissions=enforce
+
+# Storage
+ro.vendor.mtk_f2fs_enable=1
+ro.vendor.mtk_emmc_support=1
+ro.vendor.mtk_ufs_support=1
+ro.crypto.volume.filenames_mode=aes-256-cts
+
+# Sensors
+ro.vendor.mtk.sensor.support=yes
+
+# Surface Flinger
+ro.surface_flinger.protected_contents=true
+debug.sf.disable_client_composition_cache=1
+debug.sf.enable_gl_backpressure=1
+debug.sf.predict_hwc_composition_strategy=0
+debug.sf.use_phase_offsets_as_durations=1
+debug.sf.late.sf.duration=15600000
+debug.sf.late.app.duration=17000000
+debug.sf.early.sf.duration=15600000
+debug.sf.early.app.duration=17000000
+debug.sf.earlyGl.sf.duration=15600000
+debug.sf.earlyGl.app.duration=17000000
+debug.sf.hwc.min.duration=17000000
+debug.sf.auto_latch_unsignaled=true
+debug.sf.enable_transaction_tracing=false
+debug.sf.enable_hwc_vds=0
+
+# TEE
+ro.vendor.mtk_svp_on_mtee_support=1
+ro.vendor.mtk_tee_gp_support=1
+ro.vendor.mtk_trustonic_tee_support=1
+ro.mtk_key_manager_support=1
+ro.hardware.kmsetkey=trustonic
+ro.hardware.gatekeeper=trustonic

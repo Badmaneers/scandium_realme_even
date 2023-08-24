@@ -52,6 +52,10 @@ PRODUCT_COMPRESSED_APEX := false
 # Extra VNDK Versions
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
+# Always use GPU for sreen compositing
+PRODUCT_PROPERTY_OVERRIDES += \
+	debug.sf.disable_hwc_overlays=1
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default
@@ -103,6 +107,10 @@ PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-im
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
+DONT_DEXPREOPT_PREBUILTS := true
+#Enable whole-program R8 Java optimization for SystemUI and system_server
+SYSTEM_OPTIMIZE_JAVA := true
+SYSEMUI_OPTIMIZE_JAVA := true
 
 # DT2W
 PRODUCT_PACKAGES += \
@@ -123,6 +131,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.ims.xml
+
+# Freeform Multiwindow
+PRODUCT_COPY_FILES += \
+frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -158,7 +170,14 @@ PRODUCT_PACKAGES += \
     libkeymaster_portable.vendor:64 \
     libkeymaster_messages.vendor:64 \
     libsoft_attestation_cert.vendor:64 \
-    libpuresoftkeymasterdevice.vendor:64
+    libpuresoftkeymasterdevice.vendor:64 \
+    libsoft_attestation_cert.vendor:64 \
+
+# Viper4Android
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/prebuilt/viper/lib/soundfx/libv4a_re.so:$(TARGET_COPY_OUT_VENDOR)/lib/soundfx/libv4a_re.so \
+    $(DEVICE_PATH)/prebuilt/viper/lib64/soundfx/libv4a_re.so:$(TARGET_COPY_OUT_VENDOR)/lib/soundfx/libv4a_re.so \
+    $(DEVICE_PATH)/prebuilt/viper/etc/audio_effects.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_effects.conf
 
 # Libxml2
 PRODUCT_PACKAGES += \
@@ -202,7 +221,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/power/powercontable.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powercontable.xml \
     $(DEVICE_PATH)/configs/power/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml \
-	$(LOCAL_PATH)/configs/power/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml
+    $(LOCAL_PATH)/configs/power/power_app_cfg.xml:$(TARGET_COPY_OUT_VENDOR)/etc/power_app_cfg.xml
 
 # Properties
 -include $(DEVICE_PATH)/configs/props/vendor.prop
@@ -211,7 +230,7 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 # Recovery
 PRODUCT_PACKAGES += \
     init.recovery.mt6768.rc
-	
+
 # Screen density
 PRODUCT_AAPT_CONFIG := xxxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
@@ -220,15 +239,24 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 # Screen Recorder
 PRODUCT_PACKAGES += \
     ScreenRecorder
-	
+
 # Speed up
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Launcher3QuickStep \
     Settings \
     SystemUI
 
+# VNDK
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v32/arm/arch-arm-armv7-a-neon/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libutils-v32.so \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v32.so \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-core/libcrypto.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcrypto-v32.so
+
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH) \
+    hardware/mediatek \
+    hardware/oplus
 
 # Wi-Fi
 PRODUCT_PACKAGES += \

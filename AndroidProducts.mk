@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/dot_lily.mk
+    $(LOCAL_DIR)/los_lily.mk
 
 COMMON_LUNCH_CHOICES := \
-        dot_lily-eng \
-        dot_lily-user \
-        dot_lily-userdebug
+        los_lily-eng \
+        los_lily-user \
+        los_lily-userdebug

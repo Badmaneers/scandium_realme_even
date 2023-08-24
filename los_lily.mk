@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Inherit some common dot-os stuff.
-$(call inherit-product, vendor/dot/config/common.mk)
+# Inherit some common LOS-os stuff.
+$(call inherit-product, vendor/lineage/config/common.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -25,21 +25,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/realme/lily/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := dot_lily
+PRODUCT_NAME := los_lily
 PRODUCT_DEVICE := lily
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := realme C25 Series
+PRODUCT_MODEL := realme G70 Series
 PRODUCT_MANUFACTURER := realme
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_GAPPS_ARCH := arm64
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_USE_PIXEL_CHARGER := true
 TARGET_BOOT_ANIMATION_RES := 720
-
-# Stuff
-DOT_OFFICIAL := false
-DOT_GAPPS_TYPE := gapps
-DOT_VARIANT := COMMUNITY
 
 # Build info
 BUILD_FINGERPRINT := "google/coral/coral:12/SP2A.220505.002/8353555:user/release-keys"
