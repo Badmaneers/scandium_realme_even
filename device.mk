@@ -26,7 +26,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # IMS
-$(call inherit-product, vendor/realme/lily-ims/lily-ims.mk)
+$(call inherit-product, device/realme/realme/lily-ims/lily-ims.mk)
 
 # RealmeDirac
 $(call inherit-product, $(DEVICE_PATH)/app/RealmeDirac/dirac.mk)
@@ -52,13 +52,17 @@ PRODUCT_COMPRESSED_APEX := false
 # Extra VNDK Versions
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
-# Always use GPU for sreen compositing
-PRODUCT_PROPERTY_OVERRIDES += \
-	debug.sf.disable_hwc_overlays=1
-
 # Audio
 PRODUCT_PACKAGES += \
-    audio.a2dp.default
+    audio.bluetooth.default \
+    libaudiofoundation.vendor \
+    libbluetooth_audio_session \
+    libalsautils \
+    libnbaio_mono \
+    libtinycompress \
+    libdynproc \
+    libhapticgenerator \
+    libstagefright_foundation
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
@@ -88,7 +92,8 @@ PRODUCT_PACKAGES += \
     Aperture 
 
 PRODUCT_PACKAGES += \
-    RemoveCameraPackages
+    RemoveCameraPackages \
+    libcamera_metadata_shim
 
 # Configstore
 PRODUCT_PACKAGES += \
@@ -163,6 +168,11 @@ PRODUCT_PACKAGES += \
     libsuspend \
     android.hardware.health@2.0
 
+# Health
+PRODUCT_PACKAGES += \
+   android.hardware.health@2.1-service \
+   android.hardware.health@2.1-impl
+
 # Keymaster
 PRODUCT_PACKAGES += \
     libkeymaster4.vendor:64 \
@@ -207,7 +217,23 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay
+    $(DEVICE_PATH)/overlay \
+    FrameworkResOverlay \
+    SystemUIOverlay \
+    SettingsOverlay \
+    TelephonyOverlay \
+    CarrierConfigOverlay
+
+# Secure Element
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.0.vendor \
+    android.hardware.secure_element@1.1.vendor \
+    android.hardware.secure_element@1.2.vendor
+
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0.vendor \
+    android.hardware.thermal@1.0-impl
 
 # Permissions
 PRODUCT_COPY_FILES += \

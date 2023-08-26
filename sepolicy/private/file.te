@@ -6,3 +6,14 @@ type proc_ppm, fs_type, proc_type;
 type sysfs_battery_supply, sysfs_type, fs_type;
 type sysfs_fps, sysfs_type, fs_type;
 type sysfs_ged, sysfs_type, fs_type;
+
+# Performance
+type proc_vm_dirty, fs_type, proc_type;
+type proc_sched_stune, fs_type, proc_type;
+type proc_sched_assist, fs_type, proc_type;
+
+# Fingerprint
+type factorytestreport_vendor_data_file, data_file_type, file_type;
+type oplus_fingerprint_file, data_file_type, file_type;
+type proc_fingerprint, fs_type, proc_type;
+type vendor_proc_fingerprint, fs_type, proc_type;

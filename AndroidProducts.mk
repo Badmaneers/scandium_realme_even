@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/los_lily.mk
+    $(LOCAL_DIR)/aosp_lily.mk
 
 COMMON_LUNCH_CHOICES := \
-        los_lily-eng \
-        los_lily-user \
-        los_lily-userdebug
+        aosp_lily-eng \
+        aosp_lily-user \
+        aosp_lily-userdebug

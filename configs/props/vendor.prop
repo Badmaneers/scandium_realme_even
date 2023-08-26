@@ -62,9 +62,6 @@ ro.lmk.psi_complete_stall_ms=150
 ro.lmk.swap_free_low_percentage=20
 ro.lmk.kill_timeout_ms=100
 
-# Privapp permissions whitelisting
-ro.control_privapp_permissions=log
-
 # Tweak the memory management of the device, enable more background apps.. etc..
 ro.config.fha_enable=true
 ro.sys.fw.bg_apps_limit=32
@@ -107,9 +104,6 @@ ro.vendor.mtk_ovl_bringup=0
 dalvik.vm.mtk-stack-trace-file=/data/anr/mtk_traces.txt
 dalvik.vm.heapsize=512m
 persist.vendor.factory.GB2312=yes
-
-# Priv-app Permissions
-ro.control_privapp_permissions=enforce
 
 # Storage
 ro.vendor.mtk_f2fs_enable=1

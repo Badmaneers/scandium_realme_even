@@ -28,9 +28,6 @@
     <!-- The width/height of the unlock icon view on keyguard. -->
     <dimen name="keyguard_indication_margin_bottom">4dp</dimen>
 
-    <!-- The padding on the top of the statusbar (usually 0) -->
-    <dimen name="status_bar_padding_top">24.0px</dimen>
-
     <!-- Use framework FOD dimming instead of kernel dimming -->
     <bool name="config_udfpsFrameworkDimming">true</bool>
 
@@ -77,7 +74,7 @@
      <integer name="config_udfpsDimmingDisableDelay">15</integer>
 
     <!-- Allow devices override audio panel location to the left side -->
-    <bool name="config_audioPanelOnLeftSide">true</bool>
+    <bool name="config_audioPanelOnLeftSide">false</bool>
 
     <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
      vibrator is capable of subtle vibrations -->
