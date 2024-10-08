@@ -5,7 +5,7 @@
 //
 
 cc_library_static {
-    name: "libinit_lily",
+    name: "libinit_even",
     srcs: [
         "libinit_utils.cpp",
     ],
@@ -15,9 +15,9 @@ cc_library_static {
 }
 
 cc_library_static {
-    name: "init_lily",
-    srcs: ["init_lily.cpp"],
-    whole_static_libs: ["libinit_lily"],
+    name: "init_even",
+    srcs: ["init_even.cpp"],
+    whole_static_libs: ["libinit_even"],
     include_dirs: ["system/core/init"],
     recovery_available: true,
 }

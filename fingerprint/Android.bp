@@ -1,8 +1,8 @@
 cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.1-service.lily",
+    name: "android.hardware.biometrics.fingerprint@2.1-service.even",
     defaults: ["hidl_defaults"],
-    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.lily.rc"],
-    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.lily.xml"],
+    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.even.rc"],
+    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.even.xml"],
     relative_install_path: "hw",
     srcs: [
         "BiometricsFingerprint.cpp",

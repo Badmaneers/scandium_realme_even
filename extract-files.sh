@@ -18,7 +18,7 @@
 
 set -e
 
-export DEVICE=lily
+export DEVICE=even
 export VENDOR=realme
 
 # Load extract_utils and do some sanity checks

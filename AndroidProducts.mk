@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_lily.mk
+    $(LOCAL_DIR)/aosp_even.mk
 
 COMMON_LUNCH_CHOICES := \
-        aosp_lily-eng \
-        aosp_lily-user \
-        aosp_lily-userdebug
+        aosp_even-eng \
+        aosp_even-user \
+        aosp_even-userdebug

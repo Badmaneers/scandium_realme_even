@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/realme/lily
+DEVICE_PATH := device/realme/even
 
 #Assert
-TARGET_OTA_ASSERT_DEVICE := RMX3191,RMX3193,RMX3195,RMX3197,RMX3430,lily,even
+TARGET_OTA_ASSERT_DEVICE := RMX3191,RMX3193,RMX3195,RMX3197,RMX3430,even,even
 
 #Build
 BUILD_BROKEN_DUP_RULES := true
