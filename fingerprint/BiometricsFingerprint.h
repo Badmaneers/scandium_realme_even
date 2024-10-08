@@ -67,7 +67,7 @@ public:
     Return<RequestStatus> cleanUp();
     Return<RequestStatus> pauseEnroll();
     Return<RequestStatus> continueEnroll();
-    Return<RequestStatus> setToucheventListener();
+    Return<RequestStatus> setTouchlilytListener();
     Return<RequestStatus> dynamicallyConfigLog(uint32_t on);
     Return<RequestStatus> pauseIdentify();
     Return<RequestStatus> continueIdentify();

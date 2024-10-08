@@ -1,4 +1,4 @@
-# Device Tree for Realme even 
+# Device Tree for Realme Lily 
 
  These are announced and released in March 2021 and June 2021.
 

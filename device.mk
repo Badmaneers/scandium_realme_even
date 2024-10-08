@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/realme/even
+DEVICE_PATH := device/realme/lily
 
 # Call proprietary blob setup
-$(call inherit-product, vendor/realme/even/even-vendor.mk)
+$(call inherit-product, vendor/realme/lily/lily-vendor.mk)
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
@@ -26,7 +26,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # IMS
-$(call inherit-product, device/realme/realme/even-ims/even-ims.mk)
+$(call inherit-product, device/realme/realme/lily-ims/lily-ims.mk)
 
 # RealmeDirac
 $(call inherit-product, $(DEVICE_PATH)/app/RealmeDirac/dirac.mk)
@@ -119,7 +119,7 @@ SYSEMUI_OPTIMIZE_JAVA := true
 
 # DT2W
 PRODUCT_PACKAGES += \
-    DT2W-Service-even
+    DT2W-Service-lily
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -130,7 +130,7 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.even
+    android.hardware.biometrics.fingerprint@2.1-service.lily
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml \
@@ -195,7 +195,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.even
+    android.hardware.light@2.0-service.lily
 
 # MTK IMS Overlays
 PRODUCT_PACKAGES += \
