@@ -29,10 +29,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, device/realme/realme/even-ims/even-ims.mk)
 
 # RealmeDirac
-$(call inherit-product, $(DEVICE_PATH)/app/RealmeDirac/dirac.mk)
+$(call inherit-product-if-exists, $(DEVICE_PATH)/app/RealmeDirac/dirac.mk)
 
 # RealmeParts
-$(call inherit-product, $(DEVICE_PATH)/app/RealmeParts/parts.mk)
+$(call inherit-product-if-exists, $(DEVICE_PATH)/app/RealmeParts/parts.mk)
 
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
