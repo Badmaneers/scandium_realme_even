@@ -1,4 +1,4 @@
-package org.lineageos.dt2w.lily;
+package org.lineageos.dt2w.even;
 
 import android.app.Service;
 import android.content.ContentResolver;
@@ -13,8 +13,8 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings.Secure;
 
-public class DT2WServicelily extends Service {
-    private static final String TAG = "DT2WServicelily";
+public class DT2WServiceeven extends Service {
+    private static final String TAG = "DT2WServiceeven";
     private Context mContext;
     private Handler mHandler;
     private CustomSettingsObserver mCustomSettingsObserver;
