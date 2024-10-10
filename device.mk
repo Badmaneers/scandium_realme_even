@@ -29,7 +29,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, vendor/realme/even-ims/even-ims.mk)
 
 # RealmeDirac
-$(call inherit-product-if-exists, $(DEVICE_PATH)/app/RealmeDirac/dirac.mk)
+#$(call inherit-product-if-exists, $(DEVICE_PATH)/app/RealmeDirac/dirac.mk)
 
 # RealmeParts
 $(call inherit-product-if-exists, $(DEVICE_PATH)/app/RealmeParts/parts.mk)
